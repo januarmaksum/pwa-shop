@@ -18,6 +18,8 @@ export default defineConfig({
       short_name: 'pwa-shop',
       description: 'fakestore',
       theme_color: '#ffffff',
+      start_url: 'https://pwa-shop-one.vercel.app/',
+      scope: 'https://pwa-shop-one.vercel.app/'
     },
 
     workbox: {
