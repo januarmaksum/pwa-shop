@@ -1,6 +1,14 @@
 import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import dotenv from 'dotenv'
+
+// Load environment variables
+dotenv.config();
+
+// Load environment variables
+const startUrl = process.env.VITE_START_URL;
+const scope = process.env.VITE_SCOPE;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,8 +26,8 @@ export default defineConfig({
       short_name: 'pwa-shop',
       description: 'fakestore',
       theme_color: '#ffffff',
-      start_url: 'https://pwa-shop-one.vercel.app/',
-      scope: 'https://pwa-shop-one.vercel.app/'
+      start_url: startUrl,
+      scope: scope,
     },
 
     workbox: {
@@ -29,7 +37,7 @@ export default defineConfig({
     },
 
     devOptions: {
-      enabled: false,
+      enabled: true,
       navigateFallback: 'index.html',
       suppressWarnings: true,
       type: 'module',

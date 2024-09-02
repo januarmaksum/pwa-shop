@@ -12,6 +12,7 @@ function PWABadge() {
     updateServiceWorker,
   } = useRegisterSW({
     onRegisteredSW(swUrl, r) {
+      console.log('period: ', period);
       if (period <= 0) return
       if (r?.active?.state === 'activated') {
         registerPeriodicSync(period, swUrl, r)
