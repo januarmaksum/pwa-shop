@@ -21,6 +21,6 @@
   "lang": "en-US",
   "name": "pwa shop",
   "short_name": "pwa shop",
-  "start_url": "http://localhost:5173/",
-  "scope": "http://localhost:5173/"
+  "start_url": "https://pwa-shop-one.vercel.app/",
+  "scope": "https://pwa-shop-one.vercel.app/"
 }
