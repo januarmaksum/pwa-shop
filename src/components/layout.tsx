@@ -23,7 +23,7 @@ export default function Layout() {
     <Container maxWidth="lg">
       <Paper className="text-center shadow-lg shadow-indigo-600/10 p-3 text-indigo-600 border border-indigo-600 border-solid mt-5">
         <Typography component="h2" className="capitalize font-bold">
-          Recommendation for you
+          Recommended for you
         </Typography>
       </Paper>
       <section className="py-6">
