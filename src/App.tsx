@@ -5,11 +5,7 @@ import Layout from "./components/layout";
 const theme = createTheme({
   components: {
     MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          backgroundColor: "#f0f0f0", // Change this to your desired color
-        },
-      },
+      styleOverrides: {},
     },
   },
 });

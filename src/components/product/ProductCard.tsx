@@ -1,10 +1,12 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { IProduct } from '../../interfaces/product.interfaces';
+import {
+  CardActionArea,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import { IProduct } from "../../interfaces/product.interfaces";
+import StarIcon from "@mui/icons-material/Star";
 
 interface ProductCardProps {
   product: IProduct;
@@ -13,22 +15,38 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Card>
-      <div className='p-8'>
+      <CardActionArea>
         <CardMedia
-            component="img"
-            alt={product.title}
-            height="200"
-            image={product.image}
+          component="img"
+          alt={product.title}
+          image={product.image}
+          className="min-[320px]:max-[359px]:h-[100px] h-[150px] md:h-[178px] object-contain"
         />
-      </div>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {product.title}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Add to cart</Button>
-      </CardActions>
+        <CardContent className="p-2 sm:p-3">
+          <Typography
+            gutterBottom
+            component="h3"
+            className="min-[320px]:max-[359px]:text-[13px] min-[320px]:max-[359px]:leading-tight text-sm line-clamp-2 min-[320px]:max-[359px]:h-[32px] h-[40px]"
+          >
+            {product.title}
+          </Typography>
+          <Typography
+            gutterBottom
+            component="p"
+            className="text-base font-bold"
+          >
+            $ {product.price}
+          </Typography>
+          <Typography
+            gutterBottom
+            component="p"
+            className="text-sm flex items-center gap-1"
+          >
+            <StarIcon className="text-yellow-500 text-lg" />
+            <span className="h-[18px]">{product.rating.rate}</span>
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 }
