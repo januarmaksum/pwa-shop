@@ -47,14 +47,14 @@ export default function Layout() {
   }, [setProducts, setCategories, setLoadingProducts, setLoadingCategories]);
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className="px-2 md:px-4">
       <CategoryCardList categories={categories} loading={isLoadingCategories} />
       <Paper className="text-center shadow-lg shadow-indigo-600/20 p-1 lg:p-3 border-b-2 border-solid border-l-0 border-r-0 border-t-0 text-indigo-600 mt-5">
         <Typography component="h2" className="capitalize font-bold">
           Recommended for you
         </Typography>
       </Paper>
-      <section className="py-6">
+      <section className="pt-2 md:pt-4 mb-4">
         {isLoadingProducts ? (
           <>loading products...</>
         ) : (

@@ -46,9 +46,6 @@ export default function ProductCard({ product }: ProductCardProps) {
               readOnly
               size="small"
             />
-            <span className="h-[18px] mt-0 leading-normal hidden md:block">
-              {product.rating.count}
-            </span>
           </Stack>
         </CardContent>
       </CardActionArea>

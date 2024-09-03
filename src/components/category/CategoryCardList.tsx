@@ -29,7 +29,7 @@ const CategoryCardList: React.FC<CategoryCardListProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-4 mt-5">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 lg:gap-4 mt-4">
       {categories.map((category, index) => (
         <CategoryCard key={index} category={category} />
       ))}
