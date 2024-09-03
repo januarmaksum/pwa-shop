@@ -4,9 +4,10 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  Rating,
+  Stack,
 } from "@mui/material";
 import { IProduct } from "../../interfaces/product.interfaces";
-import StarIcon from "@mui/icons-material/Star";
 
 interface ProductCardProps {
   product: IProduct;
@@ -35,16 +36,20 @@ export default function ProductCard({ product }: ProductCardProps) {
             component="p"
             className="text-base font-bold"
           >
-            $ {product.price}
+            ${product.price}
           </Typography>
-          <Typography
-            gutterBottom
-            component="p"
-            className="text-sm flex items-center gap-1"
-          >
-            <StarIcon className="text-yellow-500 text-lg" />
-            <span className="h-[18px]">{product.rating.rate}</span>
-          </Typography>
+          <Stack spacing={1} className="flex flex-row items-center gap-1">
+            <Rating
+              name="read-only"
+              defaultValue={0}
+              value={product.rating.rate}
+              readOnly
+              size="small"
+            />
+            <span className="h-[18px] mt-0 leading-normal hidden md:block">
+              {product.rating.count}
+            </span>
+          </Stack>
         </CardContent>
       </CardActionArea>
     </Card>
