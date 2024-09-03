@@ -14,7 +14,7 @@ interface CategoryCardProps {
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   return (
-    <Card className="bg-indigo-600/20">
+    <Card className="bg-indigo-600/10">
       <CardActionArea className="flex justify-between">
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent className="h-[56px] md:h-[104px] flex items-center p-2 xl:p-4">
