@@ -30,6 +30,10 @@ export default function Layout() {
       }
     };
 
+    loadProducts();
+  }, [setProducts, setLoadingProducts]);
+
+  React.useEffect(() => {
     const loadCategories = async () => {
       setLoadingCategories(true);
       try {
@@ -42,24 +46,22 @@ export default function Layout() {
       }
     };
 
-    loadProducts();
     loadCategories();
-  }, [setProducts, setCategories, setLoadingProducts, setLoadingCategories]);
+  }, [setCategories, setLoadingCategories]);
 
   return (
     <Container maxWidth="lg" className="px-2 md:px-4">
-      <CategoryCardList categories={categories} loading={isLoadingCategories} />
+      <CategoryCardList
+        categories={categories}
+        isLoading={isLoadingCategories}
+      />
       <Paper className="text-center shadow-lg shadow-indigo-600/20 p-1 lg:p-3 border-b-2 border-solid border-l-0 border-r-0 border-t-0 text-indigo-600 mt-5">
         <Typography component="h2" className="capitalize font-bold">
           Recommended for you
         </Typography>
       </Paper>
       <section className="pt-2 md:pt-4 mb-4">
-        {isLoadingProducts ? (
-          <>loading products...</>
-        ) : (
-          <ProductList products={products} />
-        )}
+        <ProductList products={products} isLoading={isLoadingProducts} />
       </section>
     </Container>
   );

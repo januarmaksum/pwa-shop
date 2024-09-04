@@ -1,4 +1,3 @@
-// /src/store/product.store.ts
 import { create } from "zustand";
 import { IProduct } from "../interfaces/product.interfaces";
 import { ICategory } from "../interfaces/category.interfaces";
