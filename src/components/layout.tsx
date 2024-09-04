@@ -62,6 +62,17 @@ export default function Layout() {
       </Paper>
       <section className="pt-2 md:pt-4 mb-4">
         <ProductList products={products} isLoading={isLoadingProducts} />
+        {/* <div className="text-center mt-5">
+          <Button
+            color="primary"
+            variant="contained"
+            size="large"
+            onClick={handleLoadMore}
+            disabled={isLoadingProducts}
+          >
+            Load More
+          </Button>
+        </div> */}
       </section>
     </Container>
   );
