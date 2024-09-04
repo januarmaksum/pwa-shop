@@ -27,6 +27,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
           className="block h-auto object-contain w-[50px] md:w-[75px] lg:w-[100px]"
           image={category.image}
           alt={category.name}
+          width={100}
+          height={100}
         />
       </CardActionArea>
     </Card>

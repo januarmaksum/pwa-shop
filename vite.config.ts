@@ -1,12 +1,6 @@
 import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dotenv from "dotenv";
-dotenv.config();
-
-// Load environment variables
-const startUrl = process.env.VITE_START_URL;
-const scope = process.env.VITE_SCOPE;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,13 +16,13 @@ export default defineConfig({
       },
 
       manifest: {
-        name: "pwa-shop",
-        short_name: "pwa-shop",
+        name: "PWA Shop",
+        short_name: "PWA Shop",
         description: "fakestore",
         theme_color: "#8936FF",
         background_color: "#2EC6FE",
-        start_url: startUrl,
-        scope: scope,
+        start_url: '/',
+        scope: '/',
         icons: [
           {
             purpose: "maskable",
